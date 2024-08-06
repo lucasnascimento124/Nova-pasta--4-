@@ -1,0 +1,775 @@
+<html>
+
+<head>
+  <base
+    href="https://websim.ai/get-started%20vamos%20criar%20um%20site%20proficional%20para%20coletar%20oleo%20chamado%20sinval%20oleo%20usando%20html,css,js#contact%20vamos%20deixar%20mais%20bonito%20vamos%20deixar%20mais%20bonito%20deixar%20mais%20bonito%20com%20as%20mesma%20imagens%20tira%20essa%20linha%20amarela%20atras%20da%20image%20de%20baixo%20e%20fazer%20com%20que%20os%20icons%20fica%20%20se%20movimentando">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinval Óleo - Coleta Profissional de Óleo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+    :root {
+      --primary-color: #00A86B;
+      --secondary-color: #008C5E;
+      --accent-color: #FFD700;
+      --text-color: #333333;
+      --bg-color: #F0F8FF;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: rgba(0, 168, 107, 0.9);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      background-color: var(--white);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    header.scrolled .logo {
+      color: var(--primary-color);
+    }
+
+    .logo svg {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      fill: var(--white);
+      transition: fill 0.3s ease;
+    }
+
+    header.scrolled .logo svg {
+      fill: var(--primary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    header.scrolled .nav-links a {
+      color: var(--text-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 168, 107, 0.7));
+    }
+
+    .hero-content {
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 2rem;
+      border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      letter-spacing: 2px;
+    }
+
+    .hero-content p {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Services Section Styles */
+    .services {
+      padding: 8rem 0;
+      background-color: var(--white);
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      color: var(--secondary-color);
+      position: relative;
+    }
+
+    .services h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent-color);
+      margin: 1rem auto 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-color);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      padding: 3rem 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-icon {
+      font-size: 4rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+      animation: iconMove 2s ease-in-out infinite;
+    }
+
+    @keyframes iconMove {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .service-card p {
+      color: var(--text-color);
+      font-size: 1.1rem;
+    }
+
+    /* About Section Styles */
+    .about {
+      padding: 8rem 0;
+      background-color: var(--bg-color);
+    }
+
+    .about h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      color: var(--secondary-color);
+      position: relative;
+    }
+
+    .about h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent-color);
+      margin: 1rem auto 0;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      flex: 1;
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Contact Section Styles */
+    .contact {
+      padding: 8rem 0;
+      background-color: var(--white);
+    }
+
+    .contact h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      color: var(--secondary-color);
+      position: relative;
+    }
+
+    .contact h2::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent-color);
+      margin: 1rem auto 0;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: var(--bg-color);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    footer p {
+      font-size: 1.1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .hero-content p {
+        font-size: 1.4rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .about-text {
+        order: 2;
+      }
+
+      .about-image {
+        order: 1;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M3.055 13H1v-2h2.055A9.004 9.004 0 0 1 13 3.055V1h2v2.055A9.004 9.004 0 0 1 22.945 13H25v2h-2.055A9.004 9.004 0 0 1 15 22.945V25h-2v-2.055A9.004 9.004 0 0 1 3.055 15H1v-2h2.055zM14 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z" />
+        </svg>
+        Sinval Óleo
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+ 
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Sinval Óleo</h1>
+        <p>Transformando resíduos em sustentabilidade</p>
+        <a href="#contact" class="cta-btn">Faça Parte da Mudança</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🛢️</div>
+            <h3>Coleta Especializada</h3>
+            <p>Coleta eficiente e segura de óleo usado em residências, restaurantes e indústrias, com equipamentos de
+              última geração.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔄</div>
+            <h3>Reciclagem Avançada</h3>
+            <p>Transformação do óleo coletado em biodiesel e outros produtos sustentáveis, utilizando tecnologias
+              inovadoras de reciclagem.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🌿</div>
+            <h3>Consultoria Verde</h3>
+            <p>Orientação especializada sobre práticas sustentáveis e gestão responsável de resíduos oleosos, ajudando
+              sua empresa a ser mais ecológica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Sobre Nós</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>A Sinval Óleo nasceu da paixão por um mundo mais limpo e sustentável. Somos pioneiros na coleta e
+              reciclagem de óleo usado, transformando um resíduo potencialmente prejudicial em recursos valiosos para
+              nossa sociedade.</p>
+            <p>Nossa equipe é formada por especialistas dedicados e apaixonados pela causa ambiental. Utilizamos
+              tecnologias de ponta e práticas inovadoras para maximizar o impacto positivo de nossas operações, sempre
+              buscando novas formas de contribuir para um futuro mais verde.</p>
+            <p>Ao escolher a Sinval Óleo, você não está apenas descartando óleo usado de forma responsável – está se
+              juntando a uma missão maior de preservação ambiental e desenvolvimento sustentável.</p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Equipe Sinval Óleo trabalhando em laboratório" width="600" height="400">
+          </div>
+        </div>
+      </div>
+    
+    </section>
+
+    <section id="contact" class="contact" >
+      <div class="container" >
+        <h2>Entre em Contato</h2>
+        <form class="contact-form" >
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Enviar Mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Sinval Óleo. Transformando resíduos em um futuro sustentável.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script>
+    // Initialize GSAP and ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Header color change on scroll
+    const header = document.querySelector('header');
+    ScrollTrigger.create({
+      start: 'top -80',
+      onEnter: () => header.classList.add('scrolled'),
+      onLeaveBack: () => header.classList.remove('scrolled')
+    });
+
+    // Hero content animation
+    gsap.from('.hero-content > *', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.3,
+      ease: 'power3.out'
+    });
+
+    // Service cards animation
+    gsap.from('.service-card', {
+      scrollTrigger: {
+        trigger: '.services',
+        start: 'top 80%'
+      },
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+
+    // About section animation
+    gsap.from('.about-content > *', {
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top 80%'
+      },
+      opacity: 0,
+      x: index => index % 2 === 0 ? -50 : 50,
+      duration: 1,
+      stagger: 0.3,
+      ease: 'power3.out'
+    });
+
+    // Contact form animation
+    gsap.from('.contact-form', {
+      scrollTrigger: {
+        trigger: '.contact',
+        start: 'top 80%'
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    // Parallax effect for hero section
+    gsap.to('.hero', {
+      backgroundPosition: '50% 100%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const name = formData.get('name');
+      gsap.to('.contact-form', {
+        opacity: 0,
+        y: -50,
+        duration: 0.5,
+        onComplete: () => {
+          contactForm.innerHTML = `<h3>Obrigado, ${name}!</h3><p>Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.</p>`;
+          gsap.from('.contact-form > *', {
+            opacity: 0,
+            y: 50,
+            duration: 0.5,
+            stagger: 0.2
+          });
+        }
+      });
+    });
+
+    // Add hover animations to service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          scale: 1.05,
+          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)',
+          duration: 0.3
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          scale: 1,
+          boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)',
+          duration: 0.3
+        });
+      });
+    });
+
+    // Add a scroll-triggered counter animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      let counted = false;
+      ScrollTrigger.create({
+        trigger: counter,
+        start: 'top 80%',
+        onEnter: () => {
+          if (!counted) {
+            const target = parseInt(counter.getAttribute('data-target'));
+            gsap.to(counter, {
+              innerHTML: target,
+              duration: 2,
+              ease: 'power2.out',
+              snap: { innerHTML: 1 },
+              onComplete: () => counted = true
+            });
+          }
+        }
+      });
+    });
+
+    // Add a subtle parallax effect to the about image
+    gsap.to('.about-image img', {
+      y: -50,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.about',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // Create a dynamic water drop animation in the hero section
+    const createWaterDrop = () => {
+      const drop = document.createElement('div');
+      drop.className = 'water-drop';
+      drop.style.left = `${Math.random() * 100}%`;
+      document.querySelector('.hero').appendChild(drop);
+
+      gsap.to(drop, {
+        y: '100vh',
+        opacity: 0,
+        duration: 2 + Math.random() * 3,
+        ease: 'power1.in',
+        onComplete: () => drop.remove()
+      });
+    };
+
+    setInterval(createWaterDrop, 500);
+
+    // Add this CSS to your existing styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .water-drop {
+        position: absolute;
+        top: -20px;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Animate service icons
+    const serviceIcons = document.querySelectorAll('.service-icon');
+    serviceIcons.forEach(icon => {
+      gsap.to(icon, {
+        y: -10,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      });
+    });
+  </script>
+    <a href=" https://w.app/0hYJOP">
+
+      <img src="./download-removebg-preview (1).png" alt="link-watts">
+  
+    </a>
+
+</body>
+
+</html>
